@@ -1,5 +1,6 @@
 package com.example.ubook_ti.testeapplication;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -81,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
         //accountheader
         headerNavigation = new AccountHeaderBuilder()
                 .withActivity(this)
-                .withHeaderBackground(R.drawable.bc_header)
+                .withHeaderBackground(R.color.md_black_1000)
                 .addProfiles(
                         new ProfileDrawerItem().withName(mAuth.getCurrentUser().getDisplayName()).withEmail(mAuth.getCurrentUser().getEmail())).withOnAccountHeaderListener(new AccountHeader.OnAccountHeaderListener() {
                     @Override
@@ -95,6 +96,7 @@ public class MainActivity extends AppCompatActivity {
        navigationDrawer = new DrawerBuilder()
                .withActivity(this)
                .withAccountHeader(headerNavigation)
+               .withTranslucentNavigationBar(true)
                .withToolbar(toolbar)
                .withDisplayBelowStatusBar(true)
                .withTranslucentStatusBar(true)
